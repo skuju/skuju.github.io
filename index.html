@@ -17,7 +17,7 @@
         header {
             background: linear-gradient(90deg, #ff3300, #ff6600);
             padding: 30px;
-            color: #000;
+            color: black;
         }
         header h1 {
             margin: 0;
@@ -31,14 +31,14 @@
         .content {
             padding: 20px;
             max-width: 900px;
-            margin: 20px auto;
+            margin: 0 auto;
             background: rgba(255, 255, 255, 0.2);
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
             color: #000; /* Changed text color to black */
         }
         .content img {
-            max-width: 400px;
+            max-width: 30%;
             height: auto;
             margin: 20px 0;
             border-radius: 15px;
@@ -69,22 +69,23 @@
             padding: 15px;
             text-shadow: 1px 1px #000;
         }
-        @media (min-width: 1024px) {
-            .content {
-                padding: 40px;
-                max-width: 1200px;
-                font-size: 1.2em;
-            }
-            header h1 {
-                font-size: 4em;
-            }
-            header p {
-                font-size: 2em;
-            }
-            .cta {
-                font-size: 2em;
-                padding: 20px 40px;
-            }
+        .cta-destroy {
+            margin-top: 20px;
+            padding: 15px 30px;
+            background: linear-gradient(90deg, #660000, #ff0000);
+            color: #fff;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background 0.3s, transform 0.2s;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+        }
+        .cta-destroy:hover {
+            background: linear-gradient(90deg, #990000, #ff3333);
+            transform: scale(1.1);
         }
     </style>
 </head>
@@ -97,16 +98,17 @@
     <div class="content">
         <img src="IMG_7171.jpg" alt="Skuju Coin Logo">
 
-        <p><strong>Created in a secret lab</strong>, Skuju is a wild squirrel on the loose, ready to bring chaos and laughter to the world!</p>
+        <p><strong>Born from the brilliance of a secret lab</strong>, Skuju is no ordinary squirrel. He’s an unstoppable force of nature, set on delivering chaos, laughter, and excitement to every corner of the world!</p>
 
-        <p>With one goal in mind – <strong>causing mayhem</strong> – Skuju unleashes his crazy energy everywhere he goes. His memecoin embodies that unpredictability and rebellious spirit.</p>
+        <p>With a singular mission – <strong>unleashing mayhem</strong> – Skuju’s electrifying energy is rewriting the rules of fun and unpredictability. His memecoin embodies this untamed spirit, standing as a symbol of rebellion and innovation.</p>
 
-        <h2>Unpredictable. Hilarious. Chaotic.</h2>
+        <h2>Unstoppable. Captivating. Legendary.</h2>
 
-        <p>Fans can’t get enough of his adventures and love sharing his wild stories. Skuju Coin is more than just a memecoin – it’s a revolution of fun and unpredictability!</p>
+        <p>Millions are drawn to Skuju’s epic escapades, sharing his adventures far and wide. Skuju Coin is not just a memecoin – it’s a movement redefining the boundaries of the crypto universe!</p>
 
-        <p><strong>Built on Moonshot</strong>, Skuju Coin ensures security, scalability, and a platform to launch its chaotic energy into the crypto world. According to our calculations, Skuju Coin is set to <strong>surpass Dogecoin</strong> and become the next big star in the memecoin universe!</p>
+        <p><strong>Powered by Moonshot</strong>, Skuju Coin offers cutting-edge technology, scalability, and security. Prepare for an unprecedented journey as Skuju Coin blazes past Dogecoin, solidifying its position as the ultimate memecoin of our era!</p>
 
+        <a href="https://dexscreener.com/solana/96phnrplgpflfpnu5xn2dwupqhxddgmgtu15ha7tmoon" class="cta-destroy">CAUSE TROUBLE WITH SKUJU</a>
     </div>
 
     <footer>
