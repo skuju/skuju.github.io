@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Skuju Coin, memecoin, crypto, Moonshot, Ossas, chaos, innovation, community">
+    <meta name="author" content="Ossas">
+    <title>Skuju Coin</title>
+    <style>
+        :root {
+            --background: rgb(226, 191, 16);
+            --text: #282c34;
+            --text-accent: rgb(255, 72, 0);
+            --background-accent: rgb(238, 210, 68);
+            --footer: #181a1f;
+            --contrast: rgb(255, 72, 0);
+            --black: #000000; /* Colore nero */
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--text);
+            background-color: var(--background);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--text-accent);
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+            text-transform: uppercase;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: var(--black); /* Colore del testo in nero */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* Ombra del testo */
+            animation: breathe 4s ease-in-out infinite; /* Animazione di respiro */
+        }
+
+        /* Animazione di respiro */
+        @keyframes breathe {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.06); /* Ingrandisce il titolo al 50% */
+            }
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .social-links .button {
+            padding: 8px 15px;
+            font-size: 1rem;
+            background-color: var(--text-accent);
+            color: var(--black); /* Colore del testo in nero */
+            border-radius: 5px;
+            text-transform: uppercase;
+            transition: 0.3s;
+            border: 2px solid var(--black); /* Aggiunta bordatura nera */
+        }
+
+        .social-links .button:hover {
+            background-color: var(--black); /* Sfondo nero */
+            color: var(--background); /* Testo bianco al passaggio del mouse */
+            transform: scale(1.1);
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .box {
+            padding: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+            background-color: var(--background-accent);
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: var(--text);
+            text-align: center; /* Centra il titolo */
+        }
+
+        .box p {
+            font-size: 1rem;
+            color: var(--text);
+            margin-bottom: 20px;
+            text-align: center; /* Centra il contenuto */
+        }
+
+        .store-box {
+            padding: 20px;
+            text-align: center;
+            background-color: var(--background-accent);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+
+        .store-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: var(--text);
+        }
+
+        .store-box p {
+            font-size: 1.1rem;
+            color: var(--text);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .store-box a {
+            display: inline-block;
+            background-color: var(--text-accent);
+            color: var(--black); /* Colore del testo in nero */
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.7rem;
+            transition: 0.3s;
+            border: 2px solid var(--black); /* Aggiunta bordatura nera */
+        }
+
+        .store-box a:hover {
+            background-color: var(--black); /* Sfondo nero */
+            color: var(--background); /* Testo bianco al passaggio del mouse */
+        }
+
+        span {
+            color: var(--contrast);
+            font-weight: bold;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .button {
+            background-color: var(--text-accent);
+            color: var(--black); /* Colore del testo in nero */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            font-size: 1rem;
+            border: 2px solid var(--black); /* Aggiunta bordatura nera */
+        }
+
+        .button:hover {
+            background-color: var(--black); /* Sfondo nero */
+            color: var(--background); /* Testo bianco al passaggio del mouse */
+            transform: scale(1.1);
+        }
+
+        .button.buy-skuju {
+            font-size: 4rem;
+            margin-top: 40px;
+            background-color: var(--contrast);
+            color: var(--black); /* Colore testo in nero */
+            padding: 12px 24px;
+            border-radius: 5px;
+            border: 2px solid var(--black); /* Aggiunta bordatura nera */
+        }
+
+        .button.buy-skuju:hover {
+            background-color: var(--black); /* Sfondo nero */
+            color: var(--background); /* Testo bianco al passaggio del mouse */
+            transform: scale(1.1);
+        }
+
+        footer {
+            background-color: var(--footer);
+            color: var(--background);
+            text-align: center;
+            padding: 1rem;
+            margin-top: 20px;
+        }
+
+        /* Centra l'immagine e aumenta la sua dimensione */
+        .main-image img {
+            display: block;
+            margin: 0 auto;
+            max-width: 80%; /* Aumentato al 80% della larghezza originale */
+            max-height: 300px; /* Aumento dell'altezza massima */
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Skuju Universe</h1>
+        <!-- Social Links -->
+        <div class="social-links">
+            <a href="https://t.me/skuju_official" target="_blank" class="button">Join Telegram</a>
+            <a href="https://x.com/tech_coder_" target="_blank" class="button">Follow on X</a>
+        </div>
+    </header>
+    <main>
+        <!-- MAIN IMAGE -->
+        <div class="main-image">
+            <img src="no_sfondo.png" alt="Skuju the Squirrel">
+        </div>
+        <!-- Content Section -->
+        <div class="box">
+            <h3>Who is him?</h3>
+            <p>It's a memecoin based on a squirrel born in a secret lab. Skuju is unleashed to spread chaos and laughter across the world! With unstoppable energy and a rebellious spirit, Skuju Coin embodies unpredictability and mischief, captivating fans with his legendary antics.</p>
+        </div>
+        <div class="box">
+            <h3>The mission of Skuju</h3>
+            <p>With a singular mission <span>unleashing mayhem</span>, Skuju’s electrifying energy is rewriting the rules of fun and unpredictability. His memecoin embodies this untamed spirit, standing as a bold symbol of rebellion and innovation in the crypto world.</p>
+        </div>
+        <div class="box">
+            <h3>Why join Skuju?</h3>
+            <p>Because life’s more fun when you’re making chaos! By joining Skuju, you’re diving into a world of unstoppable energy, laughter, and unpredictability. Together, we’ll shake up the crypto world, rewrite the rules, and cause as much mayhem as possible <span>Skuju style!</span></p>
+        </div>
+        <!-- Store Box -->
+        <div class="store-box">
+            <h3>Skuju T-Shirt – Unleash the Chaos!</h3>
+            <p>Rock the wild side! This tee isn’t just clothing – it’s a rebellion. Designed for those who love chaos, laughter, and breaking all the rules. Get ready to turn heads and cause some serious mayhem. <span>Skuju style, baby!</span></p>
+            <a href="https://store.skuju.com" target="_blank">Visit Store</a>
+        </div>
+        <div class="center" style="margin-top: 20px;">
+          <a href="https://dexscreener.com/solana/96phnrplgpflfpnu5xn2dwupqhxddgmgtu15ha7tmoon" target="_blank" class="button buy-skuju">BUY SKUJU</a>
+        </div>
+    </main>
+    <footer>
+        <h4>All rights reserved - 2025 Skuju Coin &copy; - Powered by Ossas</h4>
+    </footer>
+</body>
+</html>
