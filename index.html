@@ -42,7 +42,6 @@
             animation: breathe 4s ease-in-out infinite; /* Animazione di respiro */
         }
 
-        /* Animazione di respiro */
         @keyframes breathe {
             0%, 100% {
                 transform: scale(1);
@@ -94,14 +93,14 @@
             font-size: 1.8rem;
             margin-bottom: 10px;
             color: var(--text);
-            text-align: center; /* Centra il titolo */
+            text-align: center;
         }
 
         .box p {
             font-size: 1rem;
             color: var(--text);
             margin-bottom: 20px;
-            text-align: center; /* Centra il contenuto */
+            text-align: center;
         }
 
         .store-box {
@@ -195,7 +194,6 @@
             margin-top: 20px;
         }
 
-        /* Centra l'immagine e aumenta la sua dimensione */
         .main-image img {
             display: block;
             margin: 0 auto;
@@ -204,23 +202,76 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
+
+        /* Media Queries per dispositivi mobili */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .box h3 {
+                font-size: 1.5rem;
+            }
+
+            .box p,
+            .store-box p {
+                font-size: 1rem;
+            }
+
+            .store-box h3 {
+                font-size: 1.5rem;
+            }
+
+            .button.buy-skuju {
+                font-size: 2.5rem;
+                padding: 10px 20px;
+            }
+
+            .main-image img {
+                max-width: 90%; /* Adatta meglio su schermi piccoli */
+                max-height: 250px; /* Riduce l'altezza dell'immagine */
+            }
+        }
+
+        /* Media Queries per dispositivi molto piccoli (es. telefoni con schermi piccoli) */
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.6rem;
+            }
+
+            .box h3 {
+                font-size: 1.3rem;
+            }
+
+            .box p,
+            .store-box p {
+                font-size: 0.9rem;
+            }
+
+            .button.buy-skuju {
+                font-size: 2rem;
+                padding: 8px 15px;
+            }
+
+            .main-image img {
+                max-width: 95%; /* Ancora più piccolo per schermi molto stretti */
+                max-height: 200px; /* Ancora più basso per adattarsi meglio */
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Welcome to Skuju Universe</h1>
-        <!-- Social Links -->
         <div class="social-links">
             <a href="https://t.me/skuju_official" target="_blank" class="button">Join Telegram</a>
             <a href="https://x.com/tech_coder_" target="_blank" class="button">Follow on X</a>
         </div>
     </header>
     <main>
-        <!-- MAIN IMAGE -->
         <div class="main-image">
             <img src="no_sfondo.png" alt="Skuju the Squirrel">
         </div>
-        <!-- Content Section -->
         <div class="box">
             <h3>Who is him?</h3>
             <p>It's a memecoin based on a squirrel born in a secret lab. Skuju is unleashed to spread chaos and laughter across the world! With unstoppable energy and a rebellious spirit, Skuju Coin embodies unpredictability and mischief, captivating fans with his legendary antics.</p>
@@ -233,14 +284,13 @@
             <h3>Why join Skuju?</h3>
             <p>Because life’s more fun when you’re making chaos! By joining Skuju, you’re diving into a world of unstoppable energy, laughter, and unpredictability. Together, we’ll shake up the crypto world, rewrite the rules, and cause as much mayhem as possible <span>Skuju style!</span></p>
         </div>
-        <!-- Store Box -->
         <div class="store-box">
             <h3>Skuju T-Shirt – Unleash the Chaos!</h3>
             <p>Rock the wild side! This tee isn’t just clothing – it’s a rebellion. Designed for those who love chaos, laughter, and breaking all the rules. Get ready to turn heads and cause some serious mayhem. <span>Skuju style, baby!</span></p>
             <a href="https://store.skuju.com" target="_blank">Visit Store</a>
         </div>
         <div class="center" style="margin-top: 20px;">
-          <a href="https://dexscreener.com/solana/96phnrplgpflfpnu5xn2dwupqhxddgmgtu15ha7tmoon" target="_blank" class="button buy-skuju">BUY SKUJU</a>
+            <a href="https://dexscreener.com/solana/96phnrplgpflfpnu5xn2dwupqhxddgmgtu15ha7tmoon" target="_blank" class="button buy-skuju">BUY SKUJU</a>
         </div>
     </main>
     <footer>
