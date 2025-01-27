@@ -81,6 +81,10 @@
             padding: 0 20px;
         }
 
+        .main-image {
+            margin-bottom: 20px; /* Aggiunto margine inferiore per separare l'immagine dal testo */
+        }
+
         .box {
             padding: 10px;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
@@ -231,6 +235,15 @@
                 max-width: 90%; /* Adatta meglio su schermi piccoli */
                 max-height: 250px; /* Riduce l'altezza dell'immagine */
             }
+
+            /* Adatta i pulsanti social su dispositivi mobili */
+            .social-links .button {
+                padding: 10px 20px;
+                font-size: 1.2rem;
+                display: block;
+                width: 100%; /* I pulsanti si allargheranno per occupare tutta la larghezza disponibile */
+                margin-bottom: 10px; /* Spazio tra i pulsanti */
+            }
         }
 
         /* Media Queries per dispositivi molto piccoli (es. telefoni con schermi piccoli) */
@@ -257,6 +270,15 @@
                 max-width: 95%; /* Ancora più piccolo per schermi molto stretti */
                 max-height: 200px; /* Ancora più basso per adattarsi meglio */
             }
+
+            /* Adatta i pulsanti social su dispositivi molto piccoli */
+            .social-links .button {
+                padding: 12px 20px;
+                font-size: 1.1rem;
+                display: block;
+                width: 100%; /* I pulsanti si allargheranno per occupare tutta la larghezza disponibile */
+                margin-bottom: 12px; /* Maggiore spazio tra i pulsanti */
+            }
         }
     </style>
 </head>
@@ -270,7 +292,7 @@
     </header>
     <main>
         <div class="main-image">
-            <img src="no_sfondo.png" alt="Skuju the Squirrel">
+            <img src="img/IMG_7171.png" alt="Skuju the Squirrel">
         </div>
         <div class="box">
             <h3>Who is him?</h3>
