@@ -5,22 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="Skuju Coin, memecoin, crypto, Moonshot, Ossas, chaos, innovation, community">
     <meta name="author" content="Ossas">
-    <title>Skuju Coin</title>
+    <title>Skuju Coin - The Chaos Memecoin</title>
     <style>
         :root {
-            --background: rgb(226, 191, 16);
-            --text: #282c34;
-            --text-accent: rgb(255, 72, 0);
-            --background-accent: rgb(238, 210, 68);
-            --footer: #181a1f;
-            --contrast: rgb(255, 72, 0);
-            --black: #000000; /* Colore nero */
+            --background: #1a1a1a;
+            --text: #ffffff;
+            --text-accent: #ff4800;
+            --background-accent: #2a2a2a;
+            --footer: #121212;
+            --contrast: #ff4800;
+            --black: #000000;
         }
 
         body {
             font-family: 'Roboto', sans-serif;
             font-size: 16px;
-            line-height: 1.5;
+            line-height: 1.6;
             color: var(--text);
             background-color: var(--background);
             margin: 0;
@@ -29,17 +29,18 @@
 
         header {
             background-color: var(--text-accent);
-            padding: 1rem;
+            padding: 2rem 1rem;
             text-align: center;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
             text-transform: uppercase;
         }
 
         header h1 {
-            font-size: 4rem; /* Titolo più grande */
-            color: var(--black); /* Colore del testo in nero */
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* Ombra del testo */
-            animation: breathe 4s ease-in-out infinite; /* Animazione di respiro */
+            font-size: 3.5rem;
+            color: var(--black);
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+            animation: breathe 4s ease-in-out infinite;
+            margin: 0;
         }
 
         @keyframes breathe {
@@ -47,7 +48,7 @@
                 transform: scale(1);
             }
             50% {
-                transform: scale(1.06); /* Ingrandisce il titolo al 50% */
+                transform: scale(1.06);
             }
         }
 
@@ -55,48 +56,72 @@
             display: flex;
             justify-content: center;
             gap: 10px;
-            margin-top: 10px;
+            margin-top: 1rem;
         }
 
         .social-links .button {
-            padding: 5px 10px; /* Ridotto padding */
-            font-size: 0.7rem;  /* Ridotta la dimensione del testo */
-            background-color: var(--text-accent);
-            color: var(--black); /* Colore del testo in nero */
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            background-color: var(--black);
+            color: var(--text);
             border-radius: 5px;
             text-transform: uppercase;
             transition: 0.3s;
-            border: 2px solid var(--black); /* Aggiunta bordatura nera */
+            border: 2px solid var(--black);
         }
 
         .social-links .button:hover {
-            background-color: var(--black); /* Sfondo nero */
-            color: var(--background); /* Testo bianco al passaggio del mouse */
-            transform: scale(1.1);
+            background-color: var(--text-accent);
+            color: var(--black);
+            transform: scale(1.05);
         }
 
         main {
             max-width: 800px;
-            margin: 20px auto;
+            margin: 40px auto;
             padding: 0 20px;
         }
 
         .main-image {
-            margin-bottom: 20px; /* Aggiunto margine inferiore per separare l'immagine dal testo */
+            margin-bottom: 30px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .main-image.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .main-image img {
+            max-width: 60%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
         .box {
-            padding: 10px;
+            padding: 20px;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
             background-color: var(--background-accent);
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             border-radius: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .box.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .box h3 {
             font-size: 1.8rem;
-            margin-bottom: 10px;
-            color: var(--text);
+            margin-bottom: 15px;
+            color: var(--text-accent);
             text-align: center;
         }
 
@@ -105,21 +130,30 @@
             color: var(--text);
             margin-bottom: 20px;
             text-align: center;
+            line-height: 1.8;
         }
 
         .store-box {
-            padding: 20px;
+            padding: 30px;
             text-align: center;
             background-color: var(--background-accent);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             border-radius: 10px;
             margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .store-box.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .store-box h3 {
             font-size: 1.8rem;
-            margin-bottom: 10px;
-            color: var(--text);
+            margin-bottom: 15px;
+            color: var(--text-accent);
         }
 
         .store-box p {
@@ -127,90 +161,72 @@
             color: var(--text);
             margin-bottom: 30px;
             text-align: center;
+            line-height: 1.8;
         }
 
         .store-box a {
             display: inline-block;
             background-color: var(--text-accent);
-            color: var(--black); /* Colore del testo in nero */
-            padding: 8px 16px; /* Ridotto padding */
+            color: var(--black);
+            padding: 12px 24px;
             border-radius: 5px;
             text-decoration: none;
-            font-size: 1.2rem; /* Ridotta la dimensione del testo */
+            font-size: 1.2rem;
             transition: 0.3s;
-            border: 2px solid var(--black); /* Aggiunta bordatura nera */
+            border: 2px solid var(--text-accent);
         }
 
         .store-box a:hover {
-            background-color: var(--black); /* Sfondo nero */
-            color: var(--background); /* Testo bianco al passaggio del mouse */
-        }
-
-        span {
-            color: var(--contrast);
-            font-weight: bold;
+            background-color: var(--black);
+            color: var(--text-accent);
+            transform: scale(1.05);
         }
 
         .center {
             text-align: center;
         }
 
-        .button {
-            background-color: var(--text-accent);
-            color: var(--black); /* Colore del testo in nero */
-            padding: 6px 12px; /* Ridotto padding */
-            font-size: 0.8rem;  /* Ridotta la dimensione del testo */
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: 0.3s;
-            text-decoration: none;
-            border: 2px solid var(--black); /* Aggiunta bordatura nera */
-        }
-
-        .button:hover {
-            background-color: var(--black); /* Sfondo nero */
-            color: var(--background); /* Testo bianco al passaggio del mouse */
-            transform: scale(1.1);
-        }
-
         .button.buy-skuju {
-            font-size: 5rem; /* Pulsante "Buy Skuju" più grande */
+            font-size: 2.5rem;
             margin-top: 40px;
-            background-color: var(--contrast);
-            color: var(--black); /* Colore testo in nero */
-            padding: 15px 30px; /* Aumentato padding */
+            background-color: var(--text-accent);
+            color: var(--black);
+            padding: 15px 30px;
             border-radius: 5px;
-            border: 2px solid var(--black); /* Aggiunta bordatura nera */
+            border: 2px solid var(--text-accent);
+            transition: 0.3s;
         }
 
         .button.buy-skuju:hover {
-            background-color: var(--black); /* Sfondo nero */
-            color: var(--background); /* Testo bianco al passaggio del mouse */
-            transform: scale(1.1);
+            background-color: var(--black);
+            color: var(--text-accent);
+            transform: scale(1.05);
         }
 
         footer {
             background-color: var(--footer);
-            color: var(--background);
+            color: var(--text);
             text-align: center;
-            padding: 1rem;
-            margin-top: 20px;
+            padding: 2rem 1rem;
+            margin-top: 40px;
         }
 
-        .main-image img {
-            display: block;
-            margin: 0 auto;
-            max-width: 80%; /* Aumentato al 80% della larghezza originale */
-            max-height: 300px; /* Aumento dell'altezza massima */
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        footer h4 {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+       
+
+        #back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
         }
 
         /* Media Queries per dispositivi mobili */
         @media (max-width: 768px) {
             header h1 {
-                font-size: 2.5rem; /* Titolo più grande su dispositivi mobili */
+                font-size: 2.5rem;
             }
 
             .box h3 {
@@ -227,26 +243,18 @@
             }
 
             .button.buy-skuju {
-                font-size: 3rem; /* Pulsante "Buy Skuju" più grande su dispositivi mobili */
-                padding: 10px 20px;
+                font-size: 2rem;
+                padding: 12px 24px;
             }
 
             .main-image img {
-                max-width: 90%; /* Adatta meglio su schermi piccoli */
-                max-height: 250px; /* Riduce l'altezza dell'immagine */
-            }
-
-            /* Adatta i pulsanti social su dispositivi mobili */
-            .social-links .button {
-                padding: 6px 12px;  /* Ridotto padding */
-                font-size: 0.9rem;   /* Ridotta la dimensione del testo */
+                max-width: 70%;
             }
         }
 
-        /* Media Queries per dispositivi molto piccoli (es. telefoni con schermi piccoli) */
         @media (max-width: 480px) {
             header h1 {
-                font-size: 2rem; /* Titolo più grande su dispositivi molto piccoli */
+                font-size: 2rem;
             }
 
             .box h3 {
@@ -259,22 +267,15 @@
             }
 
             .button.buy-skuju {
-                font-size: 2.5rem;   /* Pulsante "Buy Skuju" più grande su dispositivi molto piccoli */
-                padding: 8px 15px;
+                font-size: 1.8rem;
+                padding: 10px 20px;
             }
 
-            .main-image img {
-                max-width: 95%; /* Ancora più piccolo per schermi molto stretti */
-                max-height: 200px; /* Ancora più basso per adattarsi meglio */
-            }
-
-            /* Adatta i pulsanti social su dispositivi molto piccoli */
             .social-links .button {
-                padding: 8px 14px; /* Ridotto padding */
-                font-size: 0.8rem;   /* Piccola dimensione per dispositivi molto stretti */
-                display: block;
-                width: 100%; /* I pulsanti si allargheranno per occupare tutta la larghezza disponibile */
-                margin-bottom: 10px; /* Maggiore spazio tra i pulsanti */
+                padding: 8px 14px;
+                font-size: 0.8rem;
+                width: 100%;
+                margin-bottom: 10px;
             }
         }
     </style>
@@ -315,5 +316,31 @@
     <footer>
         <h4>All rights reserved - 2025 Skuju Coin &copy; - Powered by Ossas</h4>
     </footer>
+
+  
+    
+
+    <script>
+        // Animazioni al caricamento della pagina
+        document.addEventListener("DOMContentLoaded", function () {
+            const elements = document.querySelectorAll(".main-image, .box, .store-box");
+            elements.forEach((el, index) => {
+                setTimeout(() => {
+                    el.classList.add("visible");
+                }, 300 * index); // Ritardo per un effetto a cascata
+            });
+        });
+
+
+        // Scroll fluido per i link interni
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener("click", function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute("href")).scrollIntoView({
+                    behavior: "smooth"
+                });
+            });
+        });
+    </script>
 </body>
 </html>
