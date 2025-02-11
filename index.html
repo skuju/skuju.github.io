@@ -203,6 +203,67 @@
             transform: scale(1.05);
         }
 
+        .testimonials {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            font-size: 2rem;
+            color: var(--text-accent);
+            margin-bottom: 20px;
+        }
+
+        .testimonial {
+            background-color: var(--background-accent);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+        }
+
+        .testimonial p {
+            font-size: 1rem;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .testimonial span {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: var(--text-accent);
+        }
+
+        .partners {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .partners h2 {
+            font-size: 2rem;
+            color: var(--text-accent);
+            margin-bottom: 20px;
+        }
+
+        .partner-images {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .partner-images img {
+            max-width: 300px;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .partner-images img:hover {
+            transform: scale(1.1);
+        }
+
         footer {
             background-color: var(--footer);
             color: var(--text);
@@ -215,8 +276,6 @@
             font-size: 1rem;
             margin: 0;
         }
-
-       
 
         #back-to-top.visible {
             opacity: 1;
@@ -250,6 +309,15 @@
             .main-image img {
                 max-width: 70%;
             }
+
+            .testimonials h2,
+            .partners h2 {
+                font-size: 1.8rem;
+            }
+
+            .partner-images img {
+                max-width: 200px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -276,6 +344,15 @@
                 font-size: 0.8rem;
                 width: 100%;
                 margin-bottom: 10px;
+            }
+
+            .testimonials h2,
+            .partners h2 {
+                font-size: 1.5rem;
+            }
+
+            .partner-images img {
+                max-width: 120px;
             }
         }
     </style>
@@ -312,25 +389,49 @@
         <div class="center" style="margin-top: 20px;">
             <a href="https://dexscreener.com/solana/96phnrplgpflfpnu5xn2dwupqhxddgmgtu15ha7tmoon" target="_blank" class="button buy-skuju">BUY SKUJU</a>
         </div>
+
+        <!-- Sezione "What People Say About Us" -->
+        <div class="testimonials">
+            <h2>What People Say About Us</h2>
+            <div class="testimonial">
+                <p>"It was just a dream about a year ago. Today with Skuju i can say my dream become true. Skuju is not just a coin, it's a movement. Join us and be part of the chaos!"</p>
+                <span>- Tech_Coder -</span>
+                <span> FOUNDER of Skuju</span>
+            </div>
+            <div class="testimonial">
+                <p>"I love the energy and the unpredictability of Skuju. It's a breath of fresh air in the crypto space."</p>
+                <span>- Maicol T. -</span>
+            </div>
+            <div class="testimonial">
+                <p>"It is very crazy this project. Hope the best for everyone"</p>
+                <span>- Alberto A. -</span>
+            </div>
+        </div>
+
+        <!-- Sezione "Our Partners" -->
+        <div class="partners">
+            <h2>Our Partners</h2>
+            <div class="partner-images">
+                <img src="crypt_potato-removebg-preview.png" alt="Partner 1">
+                <img src="dexscrenner_logo-removebg-preview.png" alt="Partner 2">
+                <img src="moonshot_logo-removebg-preview.png" alt="Partner 3">
+            </div>
+        </div>
     </main>
     <footer>
         <h4>All rights reserved - 2025 Skuju Coin &copy; - Powered by Ossas</h4>
     </footer>
 
-  
-    
-
     <script>
         // Animazioni al caricamento della pagina
         document.addEventListener("DOMContentLoaded", function () {
-            const elements = document.querySelectorAll(".main-image, .box, .store-box");
+            const elements = document.querySelectorAll(".main-image, .box, .store-box, .testimonial, .partner-images img");
             elements.forEach((el, index) => {
                 setTimeout(() => {
                     el.classList.add("visible");
                 }, 300 * index); // Ritardo per un effetto a cascata
             });
         });
-
 
         // Scroll fluido per i link interni
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
