@@ -42,6 +42,36 @@
     </script>
 
     <style>
+            .contract-address {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text);
+        }
+
+        .contract-address .address {
+            background-color: var(--background-accent);
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .contract-address .copy-button {
+            background-color: var(--text-accent);
+            color: var(--black);
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: 2px solid var(--text-accent);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .contract-address .copy-button:hover {
+            background-color: var(--black);
+            color: var(--text-accent);
+            transform: scale(1.05);
+        }
         :root {
             --background: #1a1a1a;
             --text: #ffffff;
@@ -426,7 +456,10 @@
         <div class="center" style="margin-top: 20px;">
             <a href="https://dexscreener.com/solana/96phnrplgpflfpnu5xn2dwupqhxddgmgtu15ha7tmoon" target="_blank" class="button buy-skuju">🚀 BUY SKUJU NOW! 🚀</a>
         </div>
-
+        <div class="contract-address">
+            <span class="address">CA for Moonshot: 96phnrPLGpFLfPNU5XN2DWUPQHXDdgMGTu15hA7Tmoon</span>
+            <button class="copy-button" onclick="copyToClipboard('96phnrPLGpFLfPNU5XN2DWUPQHXDdgMGTu15hA7Tmoon')">Copy to Clipboard</button>
+        </div>
         <!-- Sezione "What People Say About Us" Aggiornata -->
         <div class="testimonials">
             <h2>What People Say About Us</h2>
@@ -478,6 +511,34 @@
     </footer>
 
     <script>
+        // Animazioni al caricamento della pagina
+        document.addEventListener("DOMContentLoaded", function () {
+            const elements = document.querySelectorAll(".main-image, .box, .store-box, .testimonial-card, .partner-images img");
+            elements.forEach((el, index) => {
+                setTimeout(() => {
+                    el.classList.add("visible");
+                }, 300 * index); // Ritardo per un effetto a cascata
+            });
+        });
+
+        // Scroll fluido per i link interni
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener("click", function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute("href")).scrollIntoView({
+                    behavior: "smooth"
+                });
+            });
+        });
+
+        // Funzione per copiare il contract address negli appunti
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                alert('Contract address copied to clipboard!');
+            }, function(err) {
+                console.error('Failed to copy text: ', err);
+            });
+        }
         // Animazioni al caricamento della pagina
         document.addEventListener("DOMContentLoaded", function () {
             const elements = document.querySelectorAll(".main-image, .box, .store-box, .testimonial-card, .partner-images img");
