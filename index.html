@@ -3,15 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Skuju Coin, memecoin, crypto, Moonshot, Ossas, chaos, innovation, community">
 
-    <title>Skuju Coin - The Chaos Memecoin</title>
+    <!-- Meta tag per la descrizione -->
+    <meta name="description" content="Skuju Coin is the ultimate chaos memecoin, blending innovation, rebellion, and fun in the crypto world. Join the Skuju movement and unleash the chaos!">
 
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="gg.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="gg.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="gg.png">
-   
+    <!-- Meta tag per le parole chiave (opzionale, non più utilizzato da Google ma utile per altri motori) -->
+    <meta name="keywords" content="Skuju Coin, memecoin, crypto, Moonshot, Dexscreener, chaos, innovation, community, blockchain, cryptocurrency">
+
+    <!-- Meta tag per l'autore -->
+    <meta name="author" content="skuju">
+
+    <!-- Meta tag per i social media (Open Graph) -->
+    <meta property="og:title" content="Skuju Coin - The Chaos Memecoin">
+    <meta property="og:description" content="Skuju Coin is the ultimate chaos memecoin, blending innovation, rebellion, and fun in the crypto world. Join the Skuju movement and unleash the chaos!">
+    <meta property="og:image" content="https://skuju.github.io/path/to/image.png">
+    <meta property="og:url" content="https://skuju.github.io">
+
+    <!-- Meta tag per Twitter (opzionale) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Skuju Coin - The Chaos Memecoin">
+    <meta name="twitter:description" content="Skuju Coin is the ultimate chaos memecoin, blending innovation, rebellion, and fun in the crypto world. Join the Skuju movement and unleash the chaos!">
+    <meta name="twitter:image" content="https://skuju.github.iopath/to/image.png">
+
+    <!-- Dati strutturati (Schema Markup) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://skuju.net",
+        "@type": "Cryptocurrency",
+        "name": "Skuju Coin",
+        "description": "Skuju Coin is the ultimate chaos memecoin, blending innovation, rebellion, and fun in the crypto world.",
+        "url": "https://skuju.github.io",
+        "image": "https://skuju.github.io/path/to/image.png",
+        "founder": {
+            "@type": "Person",
+            "name": "skuju"
+        }
+    }
+    </script>
+
     <style>
         :root {
             --background: #1a1a1a;
@@ -42,11 +71,18 @@
         }
 
         header h1 {
-            font-size: 3.5rem;
-            color: var(--black);
+            font-size: 4.5rem; /* Titolo più grande */
+            font-family: 'Impact', sans-serif; /* Font più audace */
+            background: linear-gradient(45deg, #ff4800, #ff8c00, #ff4800); /* Effetto gradient */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
-            animation: breathe 4s ease-in-out infinite;
+            animation: breathe 4s ease-in-out infinite, colorShift 5s infinite alternate;
             margin: 0;
+            line-height: 1.2;
+            border: 3px solid var(--black); /* Bordo nero */
+            padding: 10px 20px; /* Spaziatura interna */
+            border-radius: 10px; /* Angoli arrotondati */
         }
 
         @keyframes breathe {
@@ -55,6 +91,32 @@
             }
             50% {
                 transform: scale(1.06);
+            }
+        }
+
+        @keyframes colorShift {
+            0% {
+                filter: hue-rotate(0deg);
+            }
+            100% {
+                filter: hue-rotate(360deg);
+            }
+        }
+
+        header .subtitle {
+            font-size: 1.5rem; /* Sottotitolo */
+            color: var(--black);
+            margin-top: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
             }
         }
 
@@ -83,7 +145,7 @@
         }
 
         main {
-            max-width: 800px;
+            max-width: 1200px; /* Aumentato da 800px a 1200px */
             margin: 40px auto;
             padding: 0 20px;
         }
@@ -209,38 +271,76 @@
             transform: scale(1.05);
         }
 
+        /* Sezione Testimonial Aggiornata */
         .testimonials {
             margin-top: 40px;
             text-align: center;
+            padding: 20px;
         }
 
         .testimonials h2 {
             font-size: 2rem;
             color: var(--text-accent);
-            margin-bottom: 20px;
+            margin-bottom: 40px;
         }
 
-        .testimonial {
+        .testimonial-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Centra le card orizzontalmente */
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        .testimonial-card {
+            flex: 1 1 calc(33.333% - 40px); /* Ogni card occupa 1/3 dello spazio, meno il gap */
+            max-width: calc(33.333% - 40px); /* Limita la larghezza massima */
             background-color: var(--background-accent);
             padding: 20px;
             border-radius: 10px;
-            margin-bottom: 20px;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .testimonial p {
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .testimonial-card p {
             font-size: 1rem;
             color: var(--text);
             line-height: 1.6;
+            margin-bottom: 15px;
         }
 
-        .testimonial span {
-            display: block;
-            margin-top: 10px;
-            font-weight: bold;
+        .testimonial-author {
+            font-size: 0.9rem;
             color: var(--text-accent);
+            font-weight: bold;
         }
 
+        .testimonial-author span {
+            display: block;
+            margin-top: 5px;
+        }
+
+        /* Media Queries per dispositivi mobili */
+        @media (max-width: 768px) {
+            .testimonial-card {
+                flex: 1 1 calc(50% - 20px); /* 2 colonne su tablet */
+                max-width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .testimonial-card {
+                flex: 1 1 100%; /* 1 colonna su mobile */
+                max-width: 100%;
+            }
+        }
+
+        /* Sezione Partners */
         .partners {
             margin-top: 40px;
             text-align: center;
@@ -287,85 +387,12 @@
             opacity: 1;
             visibility: visible;
         }
-
-        /* Media Queries per dispositivi mobili */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.5rem;
-            }
-
-            .box h3 {
-                font-size: 1.5rem;
-            }
-
-            .box p,
-            .store-box p {
-                font-size: 1rem;
-            }
-
-            .store-box h3 {
-                font-size: 1.5rem;
-            }
-
-            .button.buy-skuju {
-                font-size: 2rem;
-                padding: 12px 24px;
-            }
-
-            .main-image img {
-                max-width: 70%;
-            }
-
-            .testimonials h2,
-            .partners h2 {
-                font-size: 1.8rem;
-            }
-
-            .partner-images img {
-                max-width: 200px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 2rem;
-            }
-
-            .box h3 {
-                font-size: 1.3rem;
-            }
-
-            .box p,
-            .store-box p {
-                font-size: 0.9rem;
-            }
-
-            .button.buy-skuju {
-                font-size: 1.8rem;
-                padding: 10px 20px;
-            }
-
-            .social-links .button {
-                padding: 8px 14px;
-                font-size: 0.8rem;
-                width: 100%;
-                margin-bottom: 10px;
-            }
-
-            .testimonials h2,
-            .partners h2 {
-                font-size: 1.5rem;
-            }
-
-            .partner-images img {
-                max-width: 120px;
-            }
-        }
     </style>
 </head>
 <body>
     <header>
         <h1>Welcome to Skuju Universe</h1>
+        <p class="subtitle">The Chaos Memecoin that’s Rewriting the Rules of Crypto!</p>
         <div class="social-links">
             <a href="https://t.me/skuju_official" target="_blank" class="button">Join Telegram</a>
             <a href="https://x.com/tech_coder_" target="_blank" class="button">Follow on X</a>
@@ -383,7 +410,10 @@
             <h3>The mission of Skuju</h3>
             <p>With a singular mission <span>unleashing mayhem</span>, Skuju’s electrifying energy is rewriting the rules of fun and unpredictability. His memecoin embodies this untamed spirit, standing as a bold symbol of rebellion and innovation in the crypto world.</p>
         </div>
-        <!-- Nuova sezione: Perché Skuju è diverso? -->
+        <div class="box">
+            <h3>Why join Skuju?</h3>
+            <p>Because life’s more fun when you’re making chaos! By joining Skuju, you’re diving into a world of unstoppable energy, laughter, and unpredictability. Together, we’ll shake up the crypto world, rewrite the rules, and cause as much mayhem as possible <span>Skuju style!</span></p>
+        </div>
         <div class="box">
             <h3>Why is Skuju different?</h3>
             <p>Skuju isn’t just another memecoin. It’s a movement fueled by chaos, creativity, and community. Unlike other projects, Skuju thrives on unpredictability and fun, creating a unique space where innovation meets rebellion. Join us and be part of something truly extraordinary!</p>
@@ -397,29 +427,39 @@
             <a href="https://dexscreener.com/solana/96phnrplgpflfpnu5xn2dwupqhxddgmgtu15ha7tmoon" target="_blank" class="button buy-skuju">🚀 BUY SKUJU NOW! 🚀</a>
         </div>
 
-        <!-- Sezione "Cosa dicono di noi" -->
+        <!-- Sezione "What People Say About Us" Aggiornata -->
         <div class="testimonials">
             <h2>What People Say About Us</h2>
-            <div class="testimonial">
-                <p>"Skuju isn’t just a coin, it’s my dream. A year ago, it was just a dream for me. Today, it’s a reality. Join us and be part of the chaos!"</p>
-                <span>- Michele.A -</span>
-                <span>FONDATORE di Skuju</span>
-            </div>
-            <div class="testimonial">
-                <p>"I love the energy and unpredictability of Skuju. It’s a breath of fresh air in the crypto space!!"</p>
-                <span>- Tommy_meme21 -</span>
-            </div>
-            <div class="testimonial">
-                <p>"This project is absolutely crazy! I wish the best for everyone involved"</p>
-                <span>- Lilly22 -</span>
-            </div>
-            <div class="testimonial">
-                <p>"When I saw it on Moonshot, I was stunned. I bought it immediately!"</p>
-                <span>- Matthew_trade_01 -</span>
-            </div>
-            <div class="testimonial">
-                <p>"For me and my analyst, Skuju will be a superstar on Moonshot and Dexscreener. You’re still in time to buy it!"</p>
-                <span>- CryptoExplorer99 -</span>
+            <div class="testimonial-grid">
+                <!-- Commento 1 -->
+                <div class="testimonial-card">
+                    <p>"Skuju isn’t just a coin, it’s a movement. A year ago, it was just a dream. Today, it’s a reality. Join us and be part of the chaos!"</p>
+                    <div class="testimonial-author">
+                        <span>- Michele.A -</span>
+                        <span>FOUNDER of Skuju</span>
+                    </div>
+                </div>
+                <!-- Commento 2 -->
+                <div class="testimonial-card">
+                    <p>"I love the energy and unpredictability of Skuju. It’s a breath of fresh air in the crypto space!"</p>
+                    <div class="testimonial-author">
+                        <span>- Tommy_in_crypto_1 -</span>
+                    </div>
+                </div>
+                <!-- Commento 3 -->
+                <div class="testimonial-card">
+                    <p>"This project is absolutely crazy! I wish the best for everyone involved."</p>
+                    <div class="testimonial-author">
+                        <span>- Lilly22 -</span>
+                    </div>
+                </div>
+                <!-- Commento 4 -->
+                <div class="testimonial-card">
+                    <p>"For me and my analyst, Skuju will be a superstar on Moonshot and Dexscreener. You’re still in time to buy it!"</p>
+                    <div class="testimonial-author">
+                        <span>- CryptoGuru99 -</span>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -440,7 +480,7 @@
     <script>
         // Animazioni al caricamento della pagina
         document.addEventListener("DOMContentLoaded", function () {
-            const elements = document.querySelectorAll(".main-image, .box, .store-box, .testimonial, .partner-images img");
+            const elements = document.querySelectorAll(".main-image, .box, .store-box, .testimonial-card, .partner-images img");
             elements.forEach((el, index) => {
                 setTimeout(() => {
                     el.classList.add("visible");
