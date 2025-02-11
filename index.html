@@ -42,36 +42,6 @@
     </script>
 
     <style>
-            .contract-address {
-            margin-top: 20px;
-            text-align: center;
-            font-size: 1.2rem;
-            color: var(--text);
-        }
-
-        .contract-address .address {
-            background-color: var(--background-accent);
-            padding: 10px;
-            border-radius: 5px;
-            display: inline-block;
-            margin-right: 10px;
-        }
-
-        .contract-address .copy-button {
-            background-color: var(--text-accent);
-            color: var(--black);
-            padding: 10px 20px;
-            border-radius: 5px;
-            border: 2px solid var(--text-accent);
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .contract-address .copy-button:hover {
-            background-color: var(--black);
-            color: var(--text-accent);
-            transform: scale(1.05);
-        }
         :root {
             --background: #1a1a1a;
             --text: #ffffff;
@@ -101,40 +71,32 @@
         }
 
         header h1 {
-            font-size: 4.5rem; /* Titolo più grande */
-            font-family: 'Impact', sans-serif; /* Font più audace */
-            background: linear-gradient(45deg, #ff4800, #ff8c00, #ff4800); /* Effetto gradient */
+            font-size: 4.5rem;
+            font-family: 'Impact', sans-serif;
+            background: linear-gradient(45deg, #ff4800, #ff8c00, #ff4800);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
             animation: breathe 4s ease-in-out infinite, colorShift 5s infinite alternate;
             margin: 0;
             line-height: 1.2;
-            border: 3px solid var(--black); /* Bordo nero */
-            padding: 10px 20px; /* Spaziatura interna */
-            border-radius: 10px; /* Angoli arrotondati */
+            border: 3px solid var(--black);
+            padding: 10px 20px;
+            border-radius: 10px;
         }
 
         @keyframes breathe {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.06);
-            }
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.06); }
         }
 
         @keyframes colorShift {
-            0% {
-                filter: hue-rotate(0deg);
-            }
-            100% {
-                filter: hue-rotate(360deg);
-            }
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
         }
 
         header .subtitle {
-            font-size: 1.5rem; /* Sottotitolo */
+            font-size: 1.5rem;
             color: var(--black);
             margin-top: 10px;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
@@ -142,12 +104,8 @@
         }
 
         @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
+            0% { opacity: 0; }
+            100% { opacity: 1; }
         }
 
         .social-links {
@@ -175,7 +133,7 @@
         }
 
         main {
-            max-width: 1200px; /* Aumentato da 800px a 1200px */
+            max-width: 1200px;
             margin: 40px auto;
             padding: 0 20px;
         }
@@ -301,7 +259,57 @@
             transform: scale(1.05);
         }
 
-        /* Sezione Testimonial Aggiornata */
+        .contract-address {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text);
+        }
+
+        .contract-address .address {
+            background-color: var(--background-accent);
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .contract-address .copy-button {
+            background-color: var(--text-accent);
+            color: var(--black);
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: 2px solid var(--text-accent);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .contract-address .copy-button:hover {
+            background-color: var(--black);
+            color: var(--text-accent);
+            transform: scale(1.05);
+        }
+
+        /* Modifiche per il contract address su mobile */
+        @media (max-width: 768px) {
+            .contract-address .address {
+                font-size: 1rem;
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            .contract-address .copy-button {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+
+            .button.buy-skuju {
+                font-size: 1.5rem;
+                padding: 10px 20px;
+                margin-top: 20px;
+            }
+        }
+
         .testimonials {
             margin-top: 40px;
             text-align: center;
@@ -317,14 +325,14 @@
         .testimonial-grid {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center; /* Centra le card orizzontalmente */
+            justify-content: center;
             gap: 20px;
             padding: 0 20px;
         }
 
         .testimonial-card {
-            flex: 1 1 calc(33.333% - 40px); /* Ogni card occupa 1/3 dello spazio, meno il gap */
-            max-width: calc(33.333% - 40px); /* Limita la larghezza massima */
+            flex: 1 1 calc(33.333% - 40px);
+            max-width: calc(33.333% - 40px);
             background-color: var(--background-accent);
             padding: 20px;
             border-radius: 10px;
@@ -355,22 +363,20 @@
             margin-top: 5px;
         }
 
-        /* Media Queries per dispositivi mobili */
         @media (max-width: 768px) {
             .testimonial-card {
-                flex: 1 1 calc(50% - 20px); /* 2 colonne su tablet */
+                flex: 1 1 calc(50% - 20px);
                 max-width: calc(50% - 20px);
             }
         }
 
         @media (max-width: 480px) {
             .testimonial-card {
-                flex: 1 1 100%; /* 1 colonna su mobile */
+                flex: 1 1 100%;
                 max-width: 100%;
             }
         }
 
-        /* Sezione Partners */
         .partners {
             margin-top: 40px;
             text-align: center;
@@ -460,11 +466,9 @@
             <span class="address">CA for Moonshot: 96phnrPLGpFLfPNU5XN2DWUPQHXDdgMGTu15hA7Tmoon</span>
             <button class="copy-button" onclick="copyToClipboard('96phnrPLGpFLfPNU5XN2DWUPQHXDdgMGTu15hA7Tmoon')">Copy to Clipboard</button>
         </div>
-        <!-- Sezione "What People Say About Us" Aggiornata -->
         <div class="testimonials">
             <h2>What People Say About Us</h2>
             <div class="testimonial-grid">
-                <!-- Commento 1 -->
                 <div class="testimonial-card">
                     <p>"Skuju isn’t just a coin, it’s a movement. A year ago, it was just a dream. Today, it’s a reality. Join us and be part of the chaos!"</p>
                     <div class="testimonial-author">
@@ -472,21 +476,18 @@
                         <span>FOUNDER of Skuju</span>
                     </div>
                 </div>
-                <!-- Commento 2 -->
                 <div class="testimonial-card">
                     <p>"I love the energy and unpredictability of Skuju. It’s a breath of fresh air in the crypto space!"</p>
                     <div class="testimonial-author">
                         <span>- Tommy_in_crypto_1 -</span>
                     </div>
                 </div>
-                <!-- Commento 3 -->
                 <div class="testimonial-card">
                     <p>"This project is absolutely crazy! I wish the best for everyone involved."</p>
                     <div class="testimonial-author">
                         <span>- Lilly22 -</span>
                     </div>
                 </div>
-                <!-- Commento 4 -->
                 <div class="testimonial-card">
                     <p>"For me and my analyst, Skuju will be a superstar on Moonshot and Dexscreener. You’re still in time to buy it!"</p>
                     <div class="testimonial-author">
@@ -495,8 +496,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Sezione "Our Partners" -->
         <div class="partners">
             <h2>Our Partners</h2>
             <div class="partner-images">
@@ -517,7 +516,7 @@
             elements.forEach((el, index) => {
                 setTimeout(() => {
                     el.classList.add("visible");
-                }, 300 * index); // Ritardo per un effetto a cascata
+                }, 300 * index);
             });
         });
 
@@ -539,25 +538,6 @@
                 console.error('Failed to copy text: ', err);
             });
         }
-        // Animazioni al caricamento della pagina
-        document.addEventListener("DOMContentLoaded", function () {
-            const elements = document.querySelectorAll(".main-image, .box, .store-box, .testimonial-card, .partner-images img");
-            elements.forEach((el, index) => {
-                setTimeout(() => {
-                    el.classList.add("visible");
-                }, 300 * index); // Ritardo per un effetto a cascata
-            });
-        });
-
-        // Scroll fluido per i link interni
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener("click", function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute("href")).scrollIntoView({
-                    behavior: "smooth"
-                });
-            });
-        });
     </script>
 </body>
 </html>
