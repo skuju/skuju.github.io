@@ -2,14 +2,13 @@
 <html lang="it">
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y0MMESF0DZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-Y0MMESF0DZ');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y0MMESF0DZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Y0MMESF0DZ');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -138,7 +137,8 @@
         .social-links .button:hover {
             background-color: var(--text-accent);
             color: var(--black);
-            transform: scale(1.05);
+            transform: scale(1.1) rotate(5deg);
+            transition: all 0.3s ease;
         }
 
         main {
@@ -299,7 +299,70 @@
             transform: scale(1.05);
         }
 
-        /* Modifiche per il contract address su mobile */
+        .music-section {
+            margin-top: 60px;
+            text-align: center;
+            padding: 40px 20px;
+            background-color: var(--background-accent);
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .music-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .music-section h2 {
+            font-size: 2.5rem;
+            color: var(--text-accent);
+            margin-bottom: 30px;
+        }
+
+        .music-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .music-buttons a {
+            display: inline-block;
+            background-color: var(--text-accent);
+            color: var(--black);
+            padding: 15px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            border: 2px solid var(--text-accent);
+        }
+
+        .music-buttons a:hover {
+            background-color: var(--black);
+            color: var(--text-accent);
+            transform: scale(1.1);
+        }
+
+        .music-buttons img {
+            width: 50px;
+            height: auto;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .music-section.visible {
+            animation: fadeInUp 1s ease-out;
+        }
+
         @media (max-width: 768px) {
             .contract-address .address {
                 font-size: 1rem;
@@ -432,6 +495,35 @@
             opacity: 1;
             visibility: visible;
         }
+
+        .loading-spinner {
+            border: 4px solid var(--text-accent);
+            border-top: 4px solid var(--black);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .skuju-footer img {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 100px;
+            height: auto;
+            animation: peek 2s infinite;
+        }
+
+        @keyframes peek {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
     </style>
 </head>
 <body>
@@ -447,6 +539,20 @@
         <div class="main-image">
             <img src="no_sfondo.png" alt="Skuju the Squirrel">
         </div>
+
+        <!-- Sezione per la canzone -->
+        <div class="music-section">
+            <h2>🎵 Listen to the Skuju Anthem! 🎵</h2>
+            <div class="music-buttons">
+                <a href="https://open.spotify.com/track/6FEtfDcwAerpvG5ILZkPYg?si=86337f40a1ec4b22" target="_blank">
+                    <img src="logo_spotify.png" alt="Spotify Logo"> Listen on Spotify
+                </a>
+                <a href="https://music.apple.com/it/album/skuju/1798608958?i=1798608960" target="_blank">
+                    <img src="logo_applemusic.png" alt="Apple Music Logo"> Listen on Apple Music
+                </a>
+            </div>
+        </div>
+
         <div class="box">
             <h3>Who is him?</h3>
             <p>It's a memecoin based on a squirrel born in a secret lab. Skuju is unleashed to spread chaos and laughter across the world! With unstoppable energy and a rebellious spirit, Skuju Coin embodies unpredictability and mischief, captivating fans with his legendary antics.</p>
@@ -516,18 +622,30 @@
     </main>
     <footer>
         <h4>All rights reserved - 2025 Skuju Coin </h4>
+        <div class="skuju-footer">
+            <img src="skuju_face.png" alt="Skuju peeking">
+        </div>
     </footer>
 
     <script>
         // Animazioni al caricamento della pagina
         document.addEventListener("DOMContentLoaded", function () {
-            const elements = document.querySelectorAll(".main-image, .box, .store-box, .testimonial-card, .partner-images img");
+            const elements = document.querySelectorAll(".main-image, .box, .store-box, .testimonial-card, .partner-images img, .music-section");
             elements.forEach((el, index) => {
                 setTimeout(() => {
                     el.classList.add("visible");
                 }, 300 * index);
             });
         });
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener("click", function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute("href")).scrollIntoView({
+                    behavior: "smooth"
+                });
+            });
+        });
+
 
         // Scroll fluido per i link interni
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -547,6 +665,23 @@
                 console.error('Failed to copy text: ', err);
             });
         }
+
+        // Effetti sonori
+        document.querySelector('.button.buy-skuju').addEventListener('click', () => {
+            new Audio('coin.mp3').play();
+        });
+
+        document.querySelector('.main-image img').addEventListener('mouseover', () => {
+            new Audio('laugh.mp3').play();
+        });
+          // Effetti sonori
+          document.querySelector('.button.buy-skuju').addEventListener('click', () => {
+            new Audio('coin.mp3').play();
+        });
+
+        document.querySelector('.main-image img').addEventListener('mouseover', () => {
+            new Audio('laugh.mp3').play();
+        });
     </script>
 </body>
 </html>
